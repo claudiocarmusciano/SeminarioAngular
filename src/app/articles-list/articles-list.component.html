@@ -1,0 +1,21 @@
+<h2>{{articleTitle}}</h2>
+<table class="table">
+  <thead>
+      <tr>
+        <th>Image</th>
+        <th>Article</th>
+        <th>Brand</th>
+        <th>Stock</th>
+        <th>Price</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let article of articles" [ngClass]="{'clearance': article.clearance}">
+      <td> <img [src]="article.image" [alt]="article.description"> </td>
+      <td>{{article.description}}</td>
+      <td>{{article.brand}}</td>
+      <td> <span *ngIf="article.stock==0" class="badge text-bg-danger">SIN STOCK</span></td>
+      <td>{{article.price | currency}}</td>
+    </tr>
+  </tbody>
+</table>
