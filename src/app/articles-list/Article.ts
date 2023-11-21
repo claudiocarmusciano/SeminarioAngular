@@ -5,4 +5,5 @@ export interface Article {
   stock: number;
   price: number;
   clearance: boolean;
+  quantity: number;
 }
